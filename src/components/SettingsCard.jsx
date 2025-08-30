@@ -8,7 +8,6 @@ import { X, Palette, Download, Upload, AlertCircle, CheckCircle, Settings, Datab
 import { useTheme } from '@/context/ThemeContext';
 import { useSettings } from '@/context/SettingsContext';
 import { useAuth } from '@/context/AuthContext';
-import { D1ApiClient } from '@/lib/d1-api';
 import ImageUpload from './ImageUpload';
 import { toast } from 'sonner';
 import MemosImport from './MemosImport';

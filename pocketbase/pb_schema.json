@@ -1,0 +1,211 @@
+{
+  "collections": [
+    {
+      "id": "memos",
+      "name": "memos",
+      "type": "base",
+      "schema": [
+        {
+          "system": false,
+          "id": "memo_content",
+          "name": "content",
+          "type": "text",
+          "required": true,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "system": false,
+          "id": "memo_tags",
+          "name": "tags",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "memo_backlinks",
+          "name": "backlinks",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "memo_created_at",
+          "name": "created_at",
+          "type": "date",
+          "required": false,
+          "unique": false,
+          "options": {
+            "min": "",
+            "max": ""
+          }
+        },
+        {
+          "system": false,
+          "id": "memo_updated_at",
+          "name": "updated_at",
+          "type": "date",
+          "required": false,
+          "unique": false,
+          "options": {
+            "min": "",
+            "max": ""
+          }
+        },
+        {
+          "system": false,
+          "id": "memo_user",
+          "name": "user",
+          "type": "relation",
+          "required": true,
+          "unique": false,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": true,
+            "minSelect": null,
+            "maxSelect": 1,
+            "displayFields": []
+          }
+        }
+      ],
+      "indexes": [],
+      "listRule": "@request.auth.id = user.id",
+      "viewRule": "@request.auth.id = user.id",
+      "createRule": "@request.auth.id = user.id",
+      "updateRule": "@request.auth.id = user.id",
+      "deleteRule": "@request.auth.id = user.id",
+      "options": {}
+    },
+    {
+      "id": "settings",
+      "name": "settings",
+      "type": "base",
+      "schema": [
+        {
+          "system": false,
+          "id": "settings_user",
+          "name": "user",
+          "type": "relation",
+          "required": true,
+          "unique": true,
+          "options": {
+            "collectionId": "_pb_users_auth_",
+            "cascadeDelete": true,
+            "minSelect": null,
+            "maxSelect": 1,
+            "displayFields": []
+          }
+        },
+        {
+          "system": false,
+          "id": "settings_pinned_memos",
+          "name": "pinned_memos",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_theme_color",
+          "name": "theme_color",
+          "type": "text",
+          "required": false,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        },
+        {
+          "system": false,
+          "id": "settings_dark_mode",
+          "name": "dark_mode",
+          "type": "bool",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_hitokoto_config",
+          "name": "hitokoto_config",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_font_config",
+          "name": "font_config",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_background_config",
+          "name": "background_config",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_avatar_config",
+          "name": "avatar_config",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_canvas_config",
+          "name": "canvas_config",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_music_config",
+          "name": "music_config",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        },
+        {
+          "system": false,
+          "id": "settings_s3_config",
+          "name": "s3_config",
+          "type": "json",
+          "required": false,
+          "unique": false,
+          "options": {}
+        }
+      ],
+      "indexes": [],
+      "listRule": "@request.auth.id = user.id",
+      "viewRule": "@request.auth.id = user.id",
+      "createRule": "@request.auth.id = user.id",
+      "updateRule": "@request.auth.id = user.id",
+      "deleteRule": "@request.auth.id = user.id",
+      "options": {}
+    }
+  ]
+}
